@@ -6,7 +6,7 @@ const modal = ({  show, closed }) => {
     const cssClasses = ['Modal', show ? 'ModalOpen' : 'ModalClosed']
     return (
         <div className={cssClasses.join(' ')}>
-            <h1>A Modal</h1>
+            <h1>A Modal with animation this time!</h1>
             <button className="Button" onClick={closed}>Dismiss</button>
         </div>
     );
