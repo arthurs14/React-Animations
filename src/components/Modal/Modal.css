@@ -13,12 +13,32 @@
     transition: all 0.3s ease-out;
 }
 
+/* 
+* Best way to transition for modals or smaller windows 
+* Use transition along with transform
+*/
 .ModalOpen {
-    opacity: 1;
-    transform: translateY(0);
+    animation: openModal 0.4s ease-in-out forwards;
 }
 
 .ModalClosed {
     opacity: 0;
-    transform: translate(-100%);
+    transform: translateY(-100%);
+}
+
+@keyframes openModal {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(90%)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
