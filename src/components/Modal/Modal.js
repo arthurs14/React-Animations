@@ -10,9 +10,11 @@ const animationTiming = {
 };
 
 const modal = ({  show, closed }) => {
-    let cssClasses = [
-        'Modal',
-    ];
+    // Only need this if you are using Transition along with writing a state
+    // Function
+    // let cssClasses = [
+    //     'Modal',
+    // ];
 
     return (
         <CSSTransition
