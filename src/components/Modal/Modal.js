@@ -1,5 +1,5 @@
 import React from 'react';
-import Transition from 'react-transition-group/Transition'
+import CSSTransition from 'react-transition-group/CSSTransition'
 
 import './Modal.css';
 
@@ -15,30 +15,16 @@ const modal = ({  show, closed }) => {
     ];
 
     return (
-        <Transition
+        <CSSTransition
             mountOnEnter
             unmountOnExit
             in={show}
             timeout={animationTiming}>
-            {
-                state => {
-                    cssClasses = [
-                        'Modal',
-                        state === 'entering'
-                        ? 'ModalOpen'
-                        : state === 'exiting' ? 'ModalClosed' : null
-                    ];
-
-                    return (
-                        <div className={cssClasses.join(' ')}>
-                            <h1>A Modal with animation this time!</h1>
-                            <button className="Button" onClick={closed}>Dismiss</button>
-                        </div>
-                    );
-                }
-            }
-            
-        </Transition>
+                <div className="Modal">
+                    <h1>A Modal with animation this time!</h1>
+                    <button className="Button" onClick={closed}>Dismiss</button>
+                </div>
+        </CSSTransition>
     );
 };
 
